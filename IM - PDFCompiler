@@ -1,0 +1,31 @@
+@echo off
+Title PDFCompiler
+CLS
+@echo off
+:MENU
+ECHO.
+ECHO ...............................................
+ECHO    filename: IM - PDFCompiler.bat
+ECHO       coder: AdamRyan
+ECHO     program: ImageMagik
+ECHO    required: ImageMagik
+ECHO    password: 313
+ECHO description: Compiles all PDFs in a set Directory
+ECHO   extention: BAT
+ECHO    licensce: OpenSource
+ECHO     website: adamryan.info
+ECHO ...............................................
+ECHO.
+@echo off
+:A
+echo enter password to activate program.
+set/p "pass=>"
+if NOT %pass%== 313 goto :FAIL
+ECHO OFF
+CLS
+
+set DOOBILYDOO = C:/
+set AHICKEY = AdamRyanHickey_R
+set Date=20190816
+
+for /r %%x in (%DOOBILYDOO%/*.pdf) do convert "%%x"  +append -quality 100 "%DOOBILYDOO%/%Date%_%AHICKEY%.pdf"
